@@ -192,5 +192,16 @@ class Base {
 
         return $this;
     }
+    
+    /**
+     * @return array
+     */
+    public function toArray() : array
+    {
+        $vars = get_object_vars($this);
+        unset($vars['data']);
+
+        return $vars;
+    }
 
 }
